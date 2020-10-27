@@ -5,7 +5,6 @@ How to customize the ProgressBarColumn text in WinForms DataGrid (SfDataGrid)?
 # About the sample
 
 By default, SfDataGrid GridProgressBarColumn have maximum value as 100, you can change the this by overriding the OnRender method in GridProgressBarColumnCellRenderer class.
-
 ```c#
 this.sfDataGrid.CellRenderers.Remove("ProgressBar");
 this.sfDataGrid.CellRenderers.Add("ProgressBar", new GridProgressBarColumnExt(new ProgressBarAdv()));
