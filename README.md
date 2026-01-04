@@ -1,16 +1,17 @@
-# How to customize the ProgressBarColumn text in WinForms DataGrid (SfDataGrid)?
+# How to customize the ProgressBarColumn text in WinForms DataGrid?
 
-How to customize the ProgressBarColumn text in WinForms DataGrid (SfDataGrid)?
+This sample illustrates how to customize the ProgressBarColumn text in [WinForms DataGrid](https://www.syncfusion.com/winforms-ui-controls/datagrid) (SfDataGrid).
 
-# About the sample
+By default, the DataGrid [GridProgressBarColumn](https://help.syncfusion.com/cr/windowsforms/Syncfusion.WinForms.DataGrid.GridProgressBarColumn.html) have maximum value as 100, you can change the this by overriding the OnRender method in [GridProgressBarColumnCellRenderer](https://help.syncfusion.com/cr/windowsforms/Syncfusion.Windows.Forms.Grid.GridProgressBarCellRenderer.html) class.
 
-By default, SfDataGrid GridProgressBarColumn have maximum value as 100, you can change the this by overriding the OnRender method in GridProgressBarColumnCellRenderer class.
 ```c#
 this.sfDataGrid.CellRenderers.Remove("ProgressBar");
 this.sfDataGrid.CellRenderers.Add("ProgressBar", new GridProgressBarColumnExt(new ProgressBarAdv()));
+
 public class GridProgressBarColumnExt : GridProgressBarCellRenderer
 {
     ProgressBarAdv ProgressBar;
+
     public GridProgressBarColumnExt(ProgressBarAdv progressBar) : base(progressBar)
     {
         ProgressBar = progressBar;
@@ -28,5 +29,8 @@ public class GridProgressBarColumnExt : GridProgressBarCellRenderer
 }
 
 ```
+
+![DataGrid showing customized ProgressBarColumn text](ModifiedProgressColumnText.png)
+
 ## Requirements to run the demo
  Visual Studio 2015 and above versions
